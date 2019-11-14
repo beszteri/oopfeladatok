@@ -1,16 +1,22 @@
 <?php
 
-class DataField{
+//------------go!
+class DataField
+{
 
     private $coloumn;
     private $row;
     private $data;
 
+
     /**
-     * DataField constructor.
+     * DataField.class constructor.
      * @param $coloumn
      * @param $row
      * @param $data
+     *
+     *
+     *
      */
     public function __construct($coloumn, $row, $data)
     {
@@ -50,9 +56,5 @@ class DataField{
     {
         return $this->data;
     }
-
-
-
-
 
 }

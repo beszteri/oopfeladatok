@@ -1,17 +1,24 @@
 <?php
 // function definition to convert array to xml
-function array_to_xml( $data, &$xml_data ) {
-    foreach( $data as $key => $value ) {
-        if( is_numeric($key) ){
+function array_to_xml( $data, SimpleXMLElement $xml_data )
+{
+    foreach( $data as $key => $value )
+    {
+        if( is_numeric($key) )
+        {
             $key = 'item'.$key; //dealing with <0/>..<n/> issues
         }
-        if( is_array($value) ) {
+        if( is_array($value) )
+        {
             $subnode = $xml_data->addChild($key);
             array_to_xml($value, $subnode);
-        } else {
+        } else
+            {
             $xml_data->addChild("$key",htmlspecialchars("$value"));
         }
     }
+
+
 }
 
 // initializing or creating array
