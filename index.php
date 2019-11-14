@@ -1,6 +1,7 @@
 <?php
 
 include 'includes/autoloader.inc.php';
+include 'includes/arrayToCsv.inc.php';
 
 ?>
 <!doctype html>
@@ -29,9 +30,9 @@ include 'includes/autoloader.inc.php';
     $table1->addToDataFields($datafield3);
     $table1->addToDataFields($datafield4);
     $table1->addToDataFields($datafield5);
-$table1->addToDataFields($datafield6);
+    $table1->addToDataFields($datafield6);
 
-$table1->setTableName("kotya");
+    $table1->setTableName("kotya");
     $table2 = new Table();
     $table2->setTableName("cica");
 
@@ -41,32 +42,16 @@ $table1->setTableName("kotya");
     $document->addToTables($table2);
 
 
-    print_r($table1->getDataFields());
-
-    $table1->removeFromDataFields(4,1);
-
-    echo "<br>";
-
-    print_r($table1->getDataFields());
-
-    echo "<br>";
-
-    echo $table1->getTableName();
-
-    echo "<br>";
-
-    print_r($document->getTables());
-
-    echo "<br>";
-
-    //$document->deleteFromTables("cica");
-
-    print_r($document->getTables());
-
     echo "<br>";
     echo "<br>";
 
     $document->displayDocument();
+
+print_r($table1->__toString());
+echo "<br>";
+echo "<br>";
+
+    print_r(array2csv($table1->__toString()));
 
 ?>
 

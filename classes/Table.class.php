@@ -62,6 +62,9 @@ class Table
         $this->dataFields = $dataFields;
     }
 
-
+    public function __toString()
+    {
+        return $this->dataFields;
+    }
 
 }
